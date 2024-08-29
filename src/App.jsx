@@ -44,13 +44,31 @@ export default function App() {
                 type="text"
                 className="bg-[rgb(22,22,22)] border border-blue-300/5 rounded-lg p-1"
                 placeholder="Name"
-                {...register("name", { required: true })}
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "No puedes agregar tareas en blanco",
+                  },
+                  minLength: {
+                    value: 3,
+                    message: "la tarea debe de tener almenos un caracter",
+                  },
+                })}
               />
               <input
                 type="text"
                 className="bg-[rgb(22,22,22)] border border-blue-300/5 rounded-lg p-1"
                 placeholder="lastName"
-                {...register("lastName")}
+                {...register("lastName", {
+                  required: {
+                    value: true,
+                    message: "No puedes agregar tareas en blanco",
+                  },
+                  minLength: {
+                    value: 3,
+                    message: "la tarea debe de tener almenos un caracter",
+                  },
+                })}
               />
               <input
                 type="text"
